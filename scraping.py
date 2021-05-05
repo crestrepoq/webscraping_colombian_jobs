@@ -13,7 +13,7 @@ import json
 url = 'https://www.linkedin.com/jobs/search/?f_TPR=r604800&geoId=100876405&location=Colombia&sortBy=DD'
 ######'https://www.linkedin.com/jobs/search/?f_TPR=r604800&geoId=100876405&location=Colombia&sortBy=DD&start=25'
 #Obtener url y parsearla jajaja
-def parser_url (url):
+def parser_url(url):
     url = requests.get(url)
     soup = BeautifulSoup(url.content, 'html.parser')
     split_html = list(soup.children)
