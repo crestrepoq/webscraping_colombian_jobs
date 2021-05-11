@@ -6,12 +6,7 @@ import numpy as np
 import pandas as pd
 import json
 
-#url = 'https://www.linkedin.com/jobs/search/?geoId=100876405&location=Colombia'
-
-#Url de las vacantes de la ultima semana ordenada por fecha de publicacion mas reciente
-#url = 'https://www.linkedin.com/jobs/search/?geoId=100876405&location=Colombia&f_TPR=r604800&sortBy=DD&position=1&pageNum=0'
 url = 'https://www.linkedin.com/jobs/search/?f_TPR=r604800&geoId=100876405&location=Colombia&sortBy=DD'
-######'https://www.linkedin.com/jobs/search/?f_TPR=r604800&geoId=100876405&location=Colombia&sortBy=DD&start=25'
 
 def parser_url(url):
     '''
@@ -174,77 +169,3 @@ vacantes = elements_job(jobs_urls)
 print(vacantes)
 vacantes.to_excel('vacantes.xlsx',encoding='utf8',index=False)
 
-
-# prueba = parser_url(jobs_urls[1])
-# #cargo = prueba.find(class_="topcard__title").text
-# cargo = (json.loads(prueba.find(type="application/ld+json").text)).get('title')
-# #empresa = prueba.find(class_="topcard__org-name-link").text
-# empresa = (json.loads(prueba.find(type="application/ld+json").text)).get('hiringOrganization').get('name')
-# ubicacion = prueba.find(class_="topcard__flavor topcard__flavor--bullet").text
-# ciudad = (json.loads(prueba.find(type="application/ld+json").text)).get('jobLocation').get('address').get('addressLocality')
-# pais = (json.loads(prueba.find(type="application/ld+json").text)).get('jobLocation').get('address').get('addressCountry')
-# #fecha = prueba.find(class_="topcard__flavor--metadata posted-time-ago__text").text
-# fecha = (json.loads(prueba.find(type="application/ld+json").text)).get('datePosted')
-# sector = (json.loads(prueba.find(type="application/ld+json").text)).get('industry')
-# experience = (json.loads(prueba.find(type="application/ld+json").text)).get('experienceRequirements')
-# tipo_empleo = (json.loads(prueba.find(type="application/ld+json").text)).get('employmentType')
-# descripcion = (json.loads(prueba.find(type="application/ld+json").text)).get('description')
-# id_vacante = (json.loads(prueba.find(type="application/ld+json").text)).get('identifier').get('value')
-# skills = (json.loads(prueba.find(type="application/ld+json").text)).get('identifier').get('skills')
-# #Me trae solo el numero de solicitudes sin texto
-# solicitudes = re.findall(r'\b\d+\b',prueba.find(class_="topcard__flavor--metadata topcard__flavor--bullet num-applicants__caption").text)[0]
-#re.findall(r'\b\d+\b', 'he33llo 42 I\'m a 32 string 30')
-#class="topcard__flavor--metadata topcard__flavor--bullet num-applicants__caption"
-# print("id_vacante:",id_vacante)
-# print("Cargo:",cargo)
-# print("Nivel experiencia:",experience)
-# print("Tipo empleo:",tipo_empleo)
-# print("Descripcion cargo:",descripcion)
-# print("# Solicitudes:",solicitudes)
-# print("Empresa:",empresa)
-# print("Ubicacion:",ubicacion)
-# print("Ciudad:",ciudad)
-# print("Pais:",pais)
-# print("Fecha publicacion:",fecha)
-# print("Sector",sector)
-
-
-'''
-<script type="application/ld+json">
-{"@context":"http://schema.org",
-"@type":"JobPosting",
-"datePosted":"2021-04-27T16:48:22.000Z",
-"description":"Trabajamos de la mano con el equipo comercial de importante entidad bancaria con más de 60 años en el mercado. Actualmente nos encontramos en búsqueda de nuevos miembros para el equipo administrativo. Si eres técnico o tecnólogo en carreras administrativas, tienes manejo intermedio de excel y cuentas con experiencia mínima de 6 meses como apoyo operativo o auxiliar administrativo de sedes bancarias, te invitamos a aplicar a esta oferta.Horario: L-V 8:00 am a 6:00 pmSalario: SMLV** Se requiere disponibilidad inmediata**",
-"employmentType":"FULL_TIME",
-"experienceRequirements":"Sin experiencia",
-"hiringOrganization":{"@type":"Organization","name":"Gobernación de Santander","sameAs":"https://co.linkedin.com/company/gobernacionsantander",
-"logo":"https://media-exp1.licdn.com/dms/image/C560BAQHLOzIzR_tqLg/company-logo_200_200/0/1519883317393?e=1628121600&v=beta&t=LH4FmBmIe05CI6qoydG7OEYN6hkBdw_rNMb5QHKejRc"},
-"identifier":{"@type":"PropertyValue","name":"Gobernación de Santander","value":"45-TRAUDX878834Y1"}
-,"image":"https://media-exp1.licdn.com/dms/image/C560BAQHLOzIzR_tqLg/company-logo_100_100/0/1519883317393?e=1628121600&v=beta&t=_rjv4o6O_JCqwNfE2MhWKAsw0MIy6S3nqJKegwdDECQ",
-"industry":"Administración gubernamental",
-"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":null,"addressLocality":"Nariño","addressRegion":null,"postalCode":"252837","addressCountry":"CO"}},
-"skills":"",
-"title":"Auxiliar administrativo","validThrough":"2021-05-27T16:48:39.000Z"}</script>
-'''
-
-
-#class="topcard__flavor--metadata posted-time-ago__text"
-
-
-
-
-
-# conteo = 0
-# for i in jobs_urls:
-#     conteo = conteo + 1
-
-# print(conteo)
-
-# vacantes = pd.DataFrame({'jobs':jobs_urls})
-# print(vacantes)
-# vacantes.to_excel('vacantes.xlsx',encoding='utf8',index=False)
-
-
-# f= open("prueba.txt","w+")
-# f.write(str(prueba))
-# f.close()
