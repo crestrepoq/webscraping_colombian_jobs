@@ -12,8 +12,12 @@ import json
 #url = 'https://www.linkedin.com/jobs/search/?geoId=100876405&location=Colombia&f_TPR=r604800&sortBy=DD&position=1&pageNum=0'
 url = 'https://www.linkedin.com/jobs/search/?f_TPR=r604800&geoId=100876405&location=Colombia&sortBy=DD'
 ######'https://www.linkedin.com/jobs/search/?f_TPR=r604800&geoId=100876405&location=Colombia&sortBy=DD&start=25'
-#Obtener url y parsearla jajaja
+
 def parser_url(url):
+    '''
+    Obtener url y parsearla
+    input y outputs
+    '''
     url = requests.get(url)
     soup = BeautifulSoup(url.content, 'html.parser')
     split_html = list(soup.children)
@@ -32,7 +36,7 @@ def get_urls_jobs(url):
     list_urls = list()
     count = 0
     times = 0
-    while times <= 5:
+    while times <= 15:
         url_search = url + '&start=' + str(count)
         list_urls.append(url_search)
         count = count + 25
