@@ -126,32 +126,7 @@ print(len(roles))
 # Muchas solicitudes, mirar enlace
 # https://stackoverflow.com/questions/23013220/max-retries-exceeded-with-url-in-requests
 
-#html_vacante_especifica = str(parser_url(list_jobs[2]))
-#print(html_vacante_especifica)
-#h = html2text.HTML2Text()
-#tml_vacante_especifica = h.handle(html_vacante_especifica)
-
-
-#file = open('html_vacante_especifica.txt', 'w')
-#file.write(html_vacante_especifica)
-#file.close()
-#print(len(vacantes))
-
-#return split_html[1]
-
-
-
-
-#jobs = parser_url(url)
-#jobs_urls = url_jobs(jobs)
-#vacantes = cargos(jobs_urls)
-
-#print(jobs_urls)
-#print(len(jobs_urls))
 # def elements_job(list_links_jobs):
-
-
-
 
 #     cargos = []
 #     empresas = []

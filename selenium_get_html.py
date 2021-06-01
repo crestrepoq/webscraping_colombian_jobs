@@ -14,7 +14,6 @@ import time
 
 enlace = 'https://www.linkedin.com/jobs/search/?f_TPR=r86400&geoId=100876405&location=Colombia&sortBy=DD&position=1&pageNum=0'
 
-
 def parser_url(url):
     '''
     Obtener url y parsearla
@@ -41,22 +40,7 @@ driver.get(enlace)
 
 ScrollNumber = math.ceil(num_vacancies/25) # 25 es un estimado de cantidad de vacantes promedio por scroll
 for i in range(1,ScrollNumber):
-    # if i == 5:
-    #     breakpoint()
-    # try:
-    #     if parser_url(enlace).find(class_="infinite-scroller__show-more-button infinite-scroller__show-more-button--visible").text == 'See more jobs':
-    #         driver.find_elements_by_xpath('/html/body/div[1]/div/main/section/button').send_keys("\n")
-    #         #driver.find_element_by_class_name("infinite-scroller__show-more-button infinite-scroller__show-more-button--visible").click()
-    #         time.sleep(5)
-    #         driver.execute_script("window.scrollTo(1,50000)")
-    #         time.sleep(5)
-    #     else: continue
-    # except:
-    #     driver.execute_script("window.scrollTo(1,50000)")
-    #     time.sleep(5)
     try:
-        #driver.find_elements_by_xpath('/html/body/div[1]/div/main/section/button').click()
-        #driver.find_elements_by_xpath('/html/body/div[1]/div/main/section/button').submit()
         element = driver.find_element_by_xpath('/html/body/div[1]/div/main/section/button')
         driver.execute_script("arguments[0].click();", element)
         time.sleep(10)
