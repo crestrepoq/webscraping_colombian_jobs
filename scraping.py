@@ -31,7 +31,7 @@ def get_urls_jobs(url):
     list_urls = list()
     count = 0
     times = 0
-    while times <= 15:
+    while times <= 20:
         url_search = url + '&start=' + str(count)
         list_urls.append(url_search)
         count = count + 25
